@@ -1,20 +1,24 @@
 package com.pam.product.models
 
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.parcelize.Parcelize
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 
 @Serializable
+@Parcelize
 data class Product(
-    @Json(name = "id")
+    @SerialName("id")
     val id: Int?,
-    @Json(name = "model_3d")
+    @SerialName("model_3d")
     val model3d: String?,
-    @Json(name = "name")
+    @SerialName("name")
     val name: String?,
-    @Json(name = "price")
+    @SerialName("price")
     val price: Double?,
-    @Json(name = "thumbnail")
+    @SerialName("thumbnail")
     val thumbnail: String?
-)
+) : Parcelable

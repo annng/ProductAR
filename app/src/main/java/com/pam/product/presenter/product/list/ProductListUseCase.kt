@@ -1,6 +1,6 @@
 package com.pam.product.presenter.product.list
 
-import com.pam.product.domain.repository.ProductRepository
+import com.pam.product.domains.repository.ProductRepository
 
 class ProductListUseCase(
     private val productRepository: ProductRepository

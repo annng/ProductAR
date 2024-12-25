@@ -1,7 +1,7 @@
-package com.pam.product.domain.repository
+package com.pam.product.domains.repository
 
 import android.content.Context
-import com.pam.product.domain.remote.ProductService
+import com.pam.product.domains.remote.ProductService
 
 class ProductRepository(
     private val productService: ProductService,

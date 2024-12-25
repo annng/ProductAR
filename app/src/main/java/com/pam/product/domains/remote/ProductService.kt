@@ -1,6 +1,7 @@
-package com.pam.product.domain.remote
+package com.pam.product.domains.remote
 
 import android.content.Context
+import android.util.Log
 import com.pam.product.models.Product
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -15,7 +16,7 @@ import java.net.URL
 class ProductService(private val client: HttpClient) {
 
     suspend fun getProducts(): List<Product> {
-        return client.get("/product").body()
+        return client.get("/product.json").body()
     }
 
     suspend fun downloadFile(url: String, context: Context): File {
@@ -30,6 +31,8 @@ class ProductService(private val client: HttpClient) {
                 }
             }
         }
+        Log.e("saveFile", file.path)
+        Log.e("fileName", fileName)
         return file
     }
 }
